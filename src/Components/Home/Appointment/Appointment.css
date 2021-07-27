@@ -1,0 +1,30 @@
+.doctor{
+    background-image:url('../../../images/5790-removebg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -125px;
+}
+
+.appointmentContainer {
+    height:400px;
+    outline:thin solid black;
+    position:relative;
+    margin: 100px 0px 100px 0px;
+    
+}
+.appointmentContainer::after, .appointmentContainer::before {
+    height:400px;
+    content:' ';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    z-index: -555;
+}
+.appointmentContainer::after {
+    right: 0;
+    background-color: #3A4256;
+}
+.appointmentContainer::before {
+    left: 0;
+    background-color: #3A4256;
+}

@@ -1,0 +1,17 @@
+.leftSideBar{
+    background-color: #14d1c9;
+    padding: 50px 20px;
+    height: 100%;
+}
+.leftSideBar li {
+   
+    list-style: none;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:17px;
+    color:white
+    
+}
+.LinkText{
+    color: white;
+}

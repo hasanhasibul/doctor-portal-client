@@ -1,0 +1,29 @@
+.footer-container{
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.text{
+    color:#1cc7c1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+
+}
+.list-item{
+    list-style-type: none;
+}
+.list-item li {
+    padding: 5px;
+    font-size: 17px;
+}
+.list-item li:hover {
+    color: #474F62;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.social-icons{
+    font-size: 35px;
+    padding: 10px;
+    
+}

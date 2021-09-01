@@ -22,7 +22,7 @@ const ServicesContainer = () => {
         }
     ]
     return (
-        <section className='services-container mt-5 mb-5'>
+        <section id="services" className='services-container mt-5 mb-5'>
             <div className="text-center ">
                 <h4 style={{color: '#1cc7c1'}} className="mt-3 mb-3">Services</h4>
                 <h2>Services We Provide</h2>

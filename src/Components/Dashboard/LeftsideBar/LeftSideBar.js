@@ -18,9 +18,7 @@ const [isDoctor , setIsDoctor] = useState(false);
         .then(data =>{
             setIsDoctor(data)
         })
-    },[])
-
-    
+    },[])    
     return (
         <div className="leftSideBar">
           <li>
@@ -31,7 +29,7 @@ const [isDoctor , setIsDoctor] = useState(false);
           <FontAwesomeIcon icon={faHome} />
               <Link className="LinkText" to="/appointments">Appointments</Link>
           </li>
-          { isDoctor && 
+          {/* { isDoctor &&  */}
            <div>
                <li>
           <FontAwesomeIcon icon={faHome} />
@@ -45,12 +43,13 @@ const [isDoctor , setIsDoctor] = useState(false);
           <FontAwesomeIcon icon={faHome} />
               <Link className="LinkText" to="/addDoctor">Add Doctor</Link>
           </li>
+            <div style={{height:'250px'}} ></div>
           <li>
           <FontAwesomeIcon icon={faHome} />
               <Link className="LinkText" to="/dashboard">Setting</Link>
           </li>
            </div>
-          }
+          {/* } */}
         </div>
     );
 };

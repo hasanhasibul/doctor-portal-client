@@ -3,12 +3,13 @@ import React from 'react';
 const SingleDoctor = ({doctor}) => {
     console.log(doctor);
     return (
-        <div className="col-md-4">
+        <div className="col-md-4 p-4">
             <div className="doctorImage">
-                <img width="300px" height="400px" src={`data:image/jpeg;base64,${doctor.image.img}`} alt="" />
+                <img className="img-fluid" src={`data:image/jpeg;base64,${doctor.image.img}`} alt="" />
             </div>
-            <div className="doctorContent">
-                <h5>{doctor.name}</h5>
+            <div className="doctorContent p-4 ">
+                <h5 style={{color:'#1CC7C1'}} className="text" > Dr. {doctor.name}</h5>
+                <h6>{doctor.email}</h6>
             </div>
         </div>
     );

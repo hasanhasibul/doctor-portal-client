@@ -25,9 +25,11 @@ const Dashboard = () => {
 
    const containerStyle = {
     backgroundColor: "#F4FDFB",
+    height:'100%'
 }
     return (
-            <div style={containerStyle} className="row">
+            <div style={containerStyle}>
+            <div  className="row">
                 <div className="col-md-3">
                     <LeftSideBar></LeftSideBar>
                 </div>
@@ -42,6 +44,7 @@ const Dashboard = () => {
                 <h2>Appointment By Date </h2>
                     <RightBar appointment={appointment}></RightBar>
                 </div>
+            </div>
             </div>
     );
 };

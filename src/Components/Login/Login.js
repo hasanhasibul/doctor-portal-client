@@ -5,8 +5,12 @@ import firebaseConfig from './firebase.confiq';
 import { userContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 import NavBar from '../Home/NavBar/NavBar';
+import Footer from '../SharedComponent/Footer/Footer';
+import './Login.css'
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 
-firebase.initializeApp(firebaseConfig);
 const Login = () => {
     const [login, setLogin] = useContext(userContext);
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -33,7 +37,7 @@ const Login = () => {
                 }
 
                 setLogin(newLogin);
-                // ...
+
                 history.replace(from);
             }).catch((error) => {
                 // Handle Errors here.
@@ -48,13 +52,23 @@ const Login = () => {
     }
     return (
 
-        <div className="container" >
+        <div className="" >
             <NavBar></NavBar>
-            <h2>Login</h2>
-            <button onClick={hangleGoogleSingIn} className="btn btn-primary">Google Sing In</button>
-            {
-                login.success && <span className="text-primary">Login succesfully</span>
-            }
+
+            <div className="row">
+                <div className="col-md-4"></div>
+                <div className="col-md-4">
+                    <div className="login d-flex align-items-center justify-content-center" >
+                        <button onClick={hangleGoogleSingIn} className="btn btn-primary login-button"> <span><i class="fa fa-google fs-base " aria-hidden="true"></i></span> Sing In With Google</button>
+                        {
+                            login.success && <span className="text-primary">Login succesfully</span>
+                        }
+                    </div>
+                </div>
+                <div className="col-md-4"></div>
+            </div>
+            <br /><br />
+            <Footer></Footer>
         </div>
     );
 };

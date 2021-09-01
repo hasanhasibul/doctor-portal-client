@@ -20,7 +20,7 @@ const DoctorForm = () => {
         formData.append('name', doctorInfo.name);
         formData.append('email', doctorInfo.email);
 
-        fetch('https://limitless-wave-39623.herokuapp.com/addDoctors', {
+        fetch('http://localhost:5000/addDoctors', {
             method: 'POST',
             body: formData
         })

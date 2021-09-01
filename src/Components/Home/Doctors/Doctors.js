@@ -10,10 +10,14 @@ const Doctors = () => {
             setDoctor(data);
         })
     },[])
+
+    if(!doctor){
+        return "Loading...."
+    }
     return (
-        <div className="container text-center p-4">
-            <h2>Our Doctors</h2>
-            <div className="row">
+        <div id="doctors" className="container text-center p-4">
+            <h2 className="text fw-bold" >Our Doctors</h2>
+            <div className="row p-4">
                 {
                     doctor.map(dt => <SingleDoctor doctor  = {dt}></SingleDoctor>)
                 }

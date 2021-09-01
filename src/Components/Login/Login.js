@@ -13,6 +13,7 @@ if (!firebase.apps.length) {
 
 const Login = () => {
     const [login, setLogin] = useContext(userContext);
+    const [email,setEmail] = useState('')
     const provider = new firebase.auth.GoogleAuthProvider();
 
 
@@ -25,10 +26,7 @@ const Login = () => {
             .signInWithPopup(provider)
             .then((result) => {
                 const user = result.user;
-                console.log(user);
                 const { displayName, email, photoURL } = user;
-                console.log(displayName, email, photoURL);
-
                 const newLogin = {
                     name: displayName,
                     email: email,
@@ -50,6 +48,20 @@ const Login = () => {
                 // ...
             });
     }
+
+    // handle login with email
+    const handleBlur = (e)=>{
+        setEmail(e.target.value)
+    }
+    
+    const handleLogin = (e)=>{
+        e.preventDefault()
+        const newLogin = {
+            email : email 
+        }
+        setLogin(newLogin)
+        history.replace(from);
+    }
     return (
 
         <div className="" >
@@ -65,7 +77,24 @@ const Login = () => {
                         }
                     </div>
                 </div>
-                <div className="col-md-4"></div>
+                <div className="col-md-4">
+                    <div className="p-4" >
+                        <h4>Try to Demo Login as a Patient </h4>
+                        <p>Email : hasibulhasan.46cse.@gmail.com</p>
+                        <br />
+                        <h4>Try to Demo Login as a Doctor </h4>
+                        <p>Email : hasanhasibul395@gmail.com</p>
+                        <p>Or You can try to create new booking and can login with your booking Email</p>
+                    </div>
+
+                    <div className="p-4" >
+                        <form onSubmit={handleLogin} action="">
+                            <input onBlur={handleBlur} type="email" className="form-control" placeholder="Email" />
+                            <br />
+                            <input type="submit" className="btn btn-primary" value="Login" />
+                        </form>
+                    </div>
+                </div>
             </div>
             <br /><br />
             <Footer></Footer>

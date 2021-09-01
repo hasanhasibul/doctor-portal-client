@@ -13,40 +13,47 @@ import AddDoctor from './Components/Dashboard/AddDoctor/AddDoctor';
 import Login from './Components/Login/Login';
 import { createContext, useState } from 'react';
 import PrivateRoute from './Components/Login/PrivateRoute';
+import Pescription from './Components/Dashboard/Pescription/Pescription';
 
-export const userContext =  createContext({});
+export const userContext = createContext({});
 
 function App() {
-  const [login,setLogin] = useState({}); 
+  const [login, setLogin] = useState({});
   console.log(login);
   return (
-    <userContext.Provider value={[login,setLogin]} >
-     <Router>
-       <Switch>
-         <Route exact path="/"> 
-        <Home></Home>
-         </Route>
-         <Route path="/appointment">
-           <AppointmentPage></AppointmentPage>
-         </Route>
-         <PrivateRoute path="/dashboard">
-           <DashboardMain></DashboardMain>
-         </PrivateRoute>
-         <Route path="/allPatients">
-         <AppointmentShortList></AppointmentShortList>
-         </Route>
-         <Route path="/appointments">
-         <Dashboard></Dashboard>
-         </Route>
-         <Route path="/addDoctor">
-         <AddDoctor></AddDoctor>
-         </Route>
-         <Route path="/login">
-         <Login></Login>
-         </Route>
-       </Switch>
-     </Router>
-     </userContext.Provider>
+    <userContext.Provider value={[login, setLogin]} >
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <Route path="/appointment">
+            <AppointmentPage></AppointmentPage>
+          </Route>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <Route path="/allPatients">
+            <AppointmentShortList></AppointmentShortList>
+          </Route>
+          <Route path="/appointments">
+            <Dashboard></Dashboard>
+          </Route>
+          <Route path="/dashboard-main">
+            <DashboardMain></DashboardMain>
+          </Route>
+          <Route path="/addDoctor">
+            <AddDoctor></AddDoctor>
+          </Route>
+          <Route path="/pescription">
+            <Pescription></Pescription>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+        </Switch>
+      </Router>
+    </userContext.Provider>
   );
 }
 
